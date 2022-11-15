@@ -1,0 +1,39 @@
+{% extends 'planner/base.html' %}
+
+{% block title %}Домашняя{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<!--Левая панель-->
+<div class="aside_left">
+    <aside>
+    <ul class="plans">
+        <a href="#"><i class="bi bi-bookmarks-fill"></i> Все задачи<br></a>
+        <a href="#"><i class="bi bi-bell"></i> Запланировано<br></a>
+        <a href="#"><i class="bi bi-arrow-repeat"></i> Выполняются<br></a>
+        <a href="#"><i class="bi bi-exclamation-octagon"></i> В стадии тестирования<br></a>
+        <a href="#"><i class="bi bi-award"></i> Выполненные<br></a>
+        <a href="#"><i class="bi bi-person"></i> Сотрудники<br></a>
+    </ul>
+    <div class="add_task">
+        <a href="#" class="btn btn-success">Создать задачу</a>
+    </div>
+</aside>
+</div>
+<!--Правая панель-->
+<div class="aside_right">
+    <aside>
+        <div class="logout">
+            Привет, {{ user.username }}!
+            <p><a href="{% url 'logout' %}">Выйти</a></p>
+        </div>
+    </aside>
+</div>
+{% else %}
+    <div class="authorization">
+        <p>Добро пожаловать!<br>Войдите или зарегистрируйтесь, для работы в приложении!</p>
+        <a href="{% url 'login' %}">Войти</a> |
+        <a href="{% url 'signup' %}">Регистрация</a>
+    </div>
+{% endif %}
+{% endblock %}

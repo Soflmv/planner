@@ -1,0 +1,75 @@
+/*фон картинка*/
+body {
+    background-image: url(fon.jpg);
+}
+
+
+/*регистрация, вход, выход*/
+.authorization {
+    margin-left: 800px;
+    margin-top: 300px;
+    list-style-type: none;
+    width: 430px;
+    color: #fff;
+}
+
+.authorization a {
+    color: #fff;
+}
+
+
+.registration {
+    margin-left: 800px;
+    margin-top: 220px;
+    list-style-type: none;
+    width: 190px;
+    color: #fff;
+}
+
+
+.login {
+    margin-left: 800px;
+    margin-top: 250px;
+    list-style-type: none;
+    width: 150px;
+    color: #fff;
+}
+
+
+/*левая панель*/
+.aside_left {
+    float: left;
+    width: 16%;
+    padding: 1%;
+    height: 100vh;
+    border-right: 2px solid #fff;
+}
+
+.aside_left ul a {
+    display: block;
+    box-sizing: border-box;
+    padding: 8px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.aside_left .add_task {
+    margin-left: 35px;
+    margin-top: 50px;
+}
+
+
+/*правая панель*/
+.aside_right {
+    float: right;
+    width: 12%;
+    padding: 1.5%;
+    height: 100vh;
+    border-left: 2px solid #fff;
+    color: #fff;
+}
+
+.aside_right a {
+    color: #fff;
+}
+

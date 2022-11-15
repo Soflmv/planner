@@ -1,0 +1,12 @@
+{% extends 'planner/base.html' %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+<form class="login" method="post">
+  <h2>Вход</h2>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Войти</button>
+</form>
+{% endblock %}
