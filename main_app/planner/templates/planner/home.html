@@ -4,15 +4,20 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+<!--Все данные о задачах-->
+{% for i in data %}
+    <div class="alert alert-success">
+        Описание задачи: {{ i.description }}<br>
+        Дата старта: {{ i.start_date }}<br>
+        Дата завершения: {{ i.end_date }}<br>
+        Приоритет: {{ i.priority }}<br>
+    </div>
+{% endfor %}
 <!--Левая панель-->
 <div class="aside_left">
     <aside>
     <ul class="plans">
-        <a href="#"><i class="bi bi-bookmarks-fill"></i> Все задачи<br></a>
-        <a href="#"><i class="bi bi-bell"></i> Запланировано<br></a>
-        <a href="#"><i class="bi bi-arrow-repeat"></i> Выполняются<br></a>
-        <a href="#"><i class="bi bi-exclamation-octagon"></i> В стадии тестирования<br></a>
-        <a href="#"><i class="bi bi-award"></i> Выполненные<br></a>
+        <a href="{% url 'main' %}"><i class="bi bi-bookmarks-fill"></i> Все задачи<br></a>
         <a href="#"><i class="bi bi-person"></i> Сотрудники<br></a>
     </ul>
     <div class="add_task">

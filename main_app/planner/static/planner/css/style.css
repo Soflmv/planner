@@ -39,10 +39,12 @@ body {
 /*левая панель*/
 .aside_left {
     float: left;
-    width: 16%;
+    width: 12%;
     padding: 1%;
     height: 100vh;
-    border-right: 2px solid #fff;
+    border-right: 1px solid #fff;
+    position: fixed;
+    bottom: 0;
 }
 
 .aside_left ul a {
@@ -61,11 +63,13 @@ body {
 
 /*правая панель*/
 .aside_right {
-    float: right;
+    position: fixed;
+    bottom: 0;
+    margin: 0 90%;
     width: 12%;
     padding: 1.5%;
     height: 100vh;
-    border-left: 2px solid #fff;
+    border-left: 1px solid #fff;
     color: #fff;
 }
 
@@ -73,3 +77,13 @@ body {
     color: #fff;
 }
 
+
+/*Данные на гл. странице*/
+.alert-success {
+    color: #fff;
+    clear: both;
+    width: 500px;
+    margin: 20px 14%;
+    text-align: left;
+    font-size: 15px;
+}
