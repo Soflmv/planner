@@ -4,16 +4,16 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<!--Все задачи-->
-{% for i in data %}
-    <div class="alert alert-success">
-        Описание задачи: {{ i.description }}<br>
-        Дата старта: {{ i.start_date }}<br>
-        Дата завершения: {{ i.end_date }}<br>
-        Приоритет выполнения: {{ i.priority }}<br>
-        На выполнении у: {{ i.user }}<br>
-        <a href="{% url 'task_detail' i.id %}" class="btn btn-primary">Детальнее</a>
-        <a href="{% url 'add_comments' i.id %}" class="btn btn-primary">Комментарии</a>
+<!--Сотрудники-->
+{% for i in users %}
+    <div class="alert alert-warning">
+        Имя пользователя: {{ i.username }}<br>
+        Имя: {{ i.first_name }}<br>
+        Фамилия: {{ i.last_name }}<br>
+        Почта: {{ i.email }}<br>
+        Специальность: {{ i.group }}<br>
+        Дата регистрации: {{ i.date_joined }}<br>
+        Последний вход: {{ i.last_login }}<br>
     </div>
 {% endfor %}
 <!--Левая панель-->

@@ -4,18 +4,21 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<!--Все задачи-->
-{% for i in data %}
-    <div class="alert alert-success">
-        Описание задачи: {{ i.description }}<br>
-        Дата старта: {{ i.start_date }}<br>
-        Дата завершения: {{ i.end_date }}<br>
-        Приоритет выполнения: {{ i.priority }}<br>
-        На выполнении у: {{ i.user }}<br>
-        <a href="{% url 'task_detail' i.id %}" class="btn btn-primary">Детальнее</a>
-        <a href="{% url 'add_comments' i.id %}" class="btn btn-primary">Комментарии</a>
+<!--Добавление новой задачи-->
+<form class="add_task_form" method="post">
+    <div>
+        {% csrf_token %}
+        {{ form.description }}
+        {{ form.start_date }}
+        {{ form.end_date }}
+        {{ form.priority }}
+        {{ form.user }}
+        <button class="btn btn-warning" type="submit">Добавить задачу</button>
+        <div class="error">
+            {{ error }}
+        </div>
     </div>
-{% endfor %}
+</form>
 <!--Левая панель-->
 <div class="aside_left">
     <aside>
